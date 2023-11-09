@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+}
+
+button{
+    transition: .2s;
+
+}
+
+button:active{
+    transform: scale(.97);
+}
+
+button:hover{
+    opacity: .9;
+}
