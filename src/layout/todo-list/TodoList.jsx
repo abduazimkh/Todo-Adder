@@ -3,20 +3,22 @@ import "./TodoList.scss"
 import PropTypes from "prop-types";
 import TodoItem from '../../components/todo-item/TodoItem';
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, setTodos}) => {
   return (
     <div className='todo-list'>
       {
-        todos.map({id, todoname, isCompleated, isEdited, isEditing, date, alarm} => 
+        todos.map(({id, todoname, isCompleated, isEdited, isEditing, date, alarm}) => 
           <TodoItem 
             key={id} 
+            id={id}
             todoname={todoname}
             isCompleated={isCompleated}
             isEdited={isEdited}
             isEditing={isEditing}
             date={date}
             alarm={alarm}
-
+            todos={todos}
+            setTodos={setTodos}
           />
         )
       }
@@ -33,7 +35,8 @@ TodoList.propTypes = {
     isEditing: PropTypes.bool,
     date: PropTypes.object,
     alarm: PropTypes.number
-  }))
+  })),
+  setTodos: PropTypes.func.isRequired
 }
 
 export default TodoList
