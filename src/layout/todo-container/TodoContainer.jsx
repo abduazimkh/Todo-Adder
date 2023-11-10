@@ -1,14 +1,19 @@
 import "./TodoContainer.scss";
 import TodoAdder from "../todo-adder/TodoAdder";
 import TodoList from "../todo-list/TodoList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TodoContainer = () => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todo-tasks")) || [])
+  console.log(todos);
+  useEffect(() => {
+    localStorage.setItem("todo-tasks", JSON.stringify(todos))
+  }, [todos])
+
   return (
     <div className="todo-container">
       <TodoAdder todos={todos} setTodos={setTodos}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} setTodos={setTodos}/>
     </div>
   )
 }
