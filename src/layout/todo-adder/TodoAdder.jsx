@@ -20,6 +20,7 @@ const TodoAdder = ({todos, setTodos}) => {
     
     setTodos([...todos, todo ])
     e.preventDefault();
+    setTodoname("")
    }
 
   return (
