@@ -1,0 +1,39 @@
+.todo-edit-form{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0003;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    &--active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
+
+.edit__form{
+    max-width: 400px;
+    width: 100%;
+    background-color: #282828;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    input{
+        margin-top: 10px; 
+    }
+
+    &-btn{
+        background-color: #f6d30b;
+        padding: 10px 30px;
+        margin-top: 20px;
+    }
+}
