@@ -1,4 +1,6 @@
-import './App.scss'
+import './App.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import TodoContainer from "./layout/todo-container/TodoContainer";
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
   return (
     <>
       <TodoContainer/>
+      <ToastContainer/> 
     </>
   )
 }
